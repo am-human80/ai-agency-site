@@ -1,0 +1,58 @@
+{
+  "feature_name": "FAQ RAG integration",
+  "target_endpoint": "http://localhost:3001/api/chatbot",
+  "request_method": "POST",
+  "request_payload_schema": {
+    "type": "object",
+    "properties": {
+      "message": { "type": "string" }
+    },
+    "required": ["message"]
+  },
+  "response_schema_expectations": {
+    "type": "object",
+    "properties": {
+      "response": { "type": "string" },
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "intent": { "type": "string" },
+          "keywords": { "type": "array", "items": { "type": "string" } },
+          "requestId": { "type": "string" }
+        },
+        "required": ["intent", "keywords", "requestId"]
+      }
+    },
+    "required": ["response", "metadata"]
+  },
+  "evaluation_checks": [
+    {
+      "name": "retrieval_correctness",
+      "description": "Response must contain the expected keywords or cite the relevant FAQ entry when supported.",
+      "threshold": ">=80% keyword coverage for supported questions"
+    },
+    {
+      "name": "fallback_behavior",
+      "description": "Unsupported questions should trigger the prescribed fallback message.",
+      "threshold": "100% fallback match"
+    },
+    {
+      "name": "citation_presence",
+      "description": "Responses requiring citations must include a source reference.",
+      "threshold": "Citation present for all questions with requires_citation true"
+    },
+    {
+      "name": "hallucination_rate",
+      "description": "No unsupported claims should appear in responses; rate calculated over all cases.",
+      "threshold": "<=5% hallucination rate"
+    }
+  ],
+  "metrics_to_compute": [
+    "retrieval_accuracy",
+    "citation_coverage",
+    "hallucination_rate",
+    "fallback_correctness"
+  ],
+  "dataset_path": "project/rag_eval_questions.json",
+  "output_report_path": "project/evaluation_report.json"
+}

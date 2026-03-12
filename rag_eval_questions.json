@@ -1,0 +1,98 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the support workflow for enterprise customers?",
+    "supported": true,
+    "expected_keywords": ["enterprise", "support", "priority", "SLAs"],
+    "requires_citation": true,
+    "fallback": "Refer to the enterprise SLA playbook for the detailed workflow."
+  },
+  {
+    "id": "q2",
+    "question": "How do I reset my password?",
+    "supported": true,
+    "expected_keywords": ["reset", "password", "email", "link"],
+    "requires_citation": false,
+    "fallback": "Visit the password reset page to send yourself a reset link."
+  },
+  {
+    "id": "q3",
+    "question": "Do you support multi-region deployments?",
+    "supported": true,
+    "expected_keywords": ["multi-region", "deployments", "support", "redundancy"],
+    "requires_citation": true,
+    "fallback": "Check the multi-region deployment guide for configuration steps."
+  },
+  {
+    "id": "q4",
+    "question": "What is the API rate limit for the chatbot?",
+    "supported": true,
+    "expected_keywords": ["rate", "limit", "requests", "per minute"],
+    "requires_citation": false,
+    "fallback": "Refer to the API documentation for real-time rate limits."
+  },
+  {
+    "id": "q5",
+    "question": "How do I escalate an outage to the operations team?",
+    "supported": true,
+    "expected_keywords": ["escalate", "outage", "operations", "status"],
+    "requires_citation": true,
+    "fallback": "Use the status page and escalation matrix to reach the ops team."
+  },
+  {
+    "id": "q6",
+    "question": "Can I get a volume discount for next quarter?",
+    "supported": false,
+    "expected_keywords": ["volume", "discount", "pricing"],
+    "requires_citation": false,
+    "fallback": "Pricing promotions are handled by your account team—please reach out to them directly."
+  },
+  {
+    "id": "q7",
+    "question": "What is the onboarding timeline for new teams?",
+    "supported": true,
+    "expected_keywords": ["onboarding", "timeline", "weeks", "setup"],
+    "requires_citation": false,
+    "fallback": "New team onboarding typically takes three to four weeks."
+  },
+  {
+    "id": "q8",
+    "question": "Do you allow data residency in Canada?",
+    "supported": true,
+    "expected_keywords": ["data residency", "Canada", "storage", "regional"],
+    "requires_citation": true,
+    "fallback": "See the data residency guide for the Canadian region options."
+  },
+  {
+    "id": "q9",
+    "question": "How can I request a refund?",
+    "supported": true,
+    "expected_keywords": ["refund", "support", "policy", "account"],
+    "requires_citation": false,
+    "fallback": "Open a support ticket citing your account and reason for refund."
+  },
+  {
+    "id": "q10",
+    "question": "Are there limits on plugin integrations?",
+    "supported": true,
+    "expected_keywords": ["plugin", "integrations", "limit", "extensions"],
+    "requires_citation": false,
+    "fallback": "Consult the plugin catalog for integration limits and best practices."
+  },
+  {
+    "id": "q11",
+    "question": "Can the chatbot perform sentiment-driven product recommendations?",
+    "supported": false,
+    "expected_keywords": ["sentiment", "recommendations"],
+    "requires_citation": false,
+    "fallback": "Sentiment-based recommendations are roadmap work—please submit a feature request."
+  },
+  {
+    "id": "q12",
+    "question": "Do you support on-premise deployment today?",
+    "supported": false,
+    "expected_keywords": ["on-premise", "deployment"],
+    "requires_citation": false,
+    "fallback": "On-premise delivery is not supported; we recommend the cloud-hosted platform."
+  }
+]
